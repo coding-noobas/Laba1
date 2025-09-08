@@ -4,18 +4,18 @@
 int main()
 {
     int a = 0;
-    std::cout << "Enter length: ";
+    std::cout << "Enter number from 3 digits: ";
     std::cin >> a;
-    if (a <= 0) {
-        std::cout << "Length must be more than 0, try again: ";
+    if (a < 100 || a >= 1000) {
+        std::cout << "Number must be 3 digits, try again: ";
         std::cin >> a;
-        if (a <= 0) {
-            while (a <= 0) {
+        if (a < 100 || a >= 1000) {
+            while (a < 100 || a >= 1000) {
                 std::cout << "Bespolezno\n";
                 std::cin >> a;
             }
         }
     }
-    std::cout << "P = " << a * 4 << "\nS = " << a * a << "\n";
+    std::cout << "Your number: " << a % 100 << a / 100 << "\n";
     return 0;
 }
